@@ -1,8 +1,50 @@
+* {
+  margin:0; padding:0;
+}
+
+header {
+  height: 300px;
+  width: 100%;
+  
+}
+
+.headline {
+  background-color: black;
+  line-height: 50px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+
+}
+
+
+.nav-list {
+  background-color: black;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+  margin-top: 200px;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+}
+
+button {
+  height: 50px;
+  width: 150px;
+  border: 0;
+  background-color: black;
+  color: white;
+  font-size: medium;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: "public/images/top1.jpg";
 }
 
 a {
-  color: #00B7FF;
 }
