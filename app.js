@@ -6,9 +6,12 @@ var logger = require('morgan');
 var helmet = require('helmet');
 
 var indexRouter = require('./routes/index');
+var editRouter = require('./routes/edit');
 
 var app = express();
 app.use(helmet());
+
+//モデルの読み込み
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
+app.use('/edit', editRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,9 +43,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const port = process.env.PORT || 4000;
-server.listen(port, () => {
-  console.info(`[${new Date()}] Listening on ${port}`);
-});
+
 
 module.exports = app;

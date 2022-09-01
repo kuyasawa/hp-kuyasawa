@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title 編集ページ
+    link(rel='stylesheet', href='/stylesheets/edit.css')
+  body
+    h1 編集ページ
+    h3 News
+    form(method="post", action="/edit")
+      div.form-group
+        label(for="newsDate") 日付
+        input(type="date" name="newsDate")#newsDate.form-control
+      div.form-group
+        label(for="newsContent") ニュース
+        textarea(name="newsDate" rows="4")#newsContent.form-control
+      button(type="submit") 投稿
