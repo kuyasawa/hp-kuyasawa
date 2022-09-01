@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet');
+var bodyParser = require('body-parser');
+
 
 var indexRouter = require('./routes/index');
 var editRouter = require('./routes/edit');
