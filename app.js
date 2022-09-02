@@ -14,6 +14,8 @@ var app = express();
 app.use(helmet());
 
 //モデルの読み込み
+var News = require ('./models/news-model');
+News.sync();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
