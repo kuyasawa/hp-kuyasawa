@@ -1,5 +1,17 @@
 extends layout
 
 block content
+  h1#page-title Contact
   div.page-content
-    h1#page-title Contact
+    form(method="post", action="")
+      div.form-group
+        label(for="contactName") 名前
+        input(type="text" name="contactName")#contactName.form-control
+      div.form-group
+        label(for="contactAddress") E-mailアドレス
+        input(type="text" name="contactAddress")#contactAddress.form-control
+      div.form-group
+        label(for="contactContent") 問い合わせ内容
+        textarea(name="contactContent" rows="10")#contactContent.form-control
+      div
+        button#contact-submit(type="submit") 送信
