@@ -1,12 +1,31 @@
-module.exports = {
-  // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: `./app.js`,
+const path = require('path');
+webpack = require('webpack');
 
-  // ファイルの出力設定
-  output: {
-    //  出力ファイルのディレクトリ名
-    path: `${__dirname}/dist`,
-    // 出力ファイル名
-    filename: "main.js"
-  }
+module.exports = {
+    // コンパイルモード
+    mode: 'production',
+    // エントリーポイントの設定
+    entry: path.resolve(__dirname, "./src/index.js"),
+    // 出力先の設定
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'index.js'
+    },
+    // スタイルシートの読み込み
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
+    // JQuery読み込み
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        })
+    ]
 };
