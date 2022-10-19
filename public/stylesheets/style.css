@@ -237,7 +237,7 @@ a#works-link:hover {
 @media screen and (max-width: 500px) { /*ウィンドウ幅が500px以下の場合に適用*/
  
   .nav-list-item {
-    width: 16.5%;
+    width: calc(100% / 6);
   }
 
   #page-title {
