@@ -13,6 +13,7 @@ a {
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 /*ヘッダー*/
@@ -148,6 +149,9 @@ footer {
   line-height: 2;
   font-size: 10px;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /*ページタイトル*/
@@ -178,6 +182,23 @@ footer {
   background-color: white;
 }
 
+/*aboutページ内容*/
+.about-content {
+  position: absolute;
+}
+
+.profile {
+  float: left;
+  width: 30%;
+}
+.profile-image {
+  width: 100%;
+}
+.intro {
+  float: left;
+  width: 60%;
+  margin-left: 3%;
+}
 
 /*linkページ内容*/
 .sns-link {
@@ -234,7 +255,7 @@ a#works-link:hover {
 }
 
 
-@media screen and (max-width: 500px) { /*ウィンドウ幅が500px以下の場合に適用*/
+@media screen and (max-width: 700px) { /*ウィンドウ幅が500px以下の場合に適用*/
  
   .nav-list-item {
     width: calc(100% / 6);

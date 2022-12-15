@@ -4,12 +4,35 @@ var path = require('path');
 var logger = require('morgan');
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
+var $ = require('jquery');
 
 
 var indexRouter = require('./routes/index');
 
 var app = express();
-app.use(helmet());
+const aj = 'https://ajax.googleapis.com'
+const fb = 'https://connect.facebook.net'
+app.use(helmet({
+  contentSecurityPolicy: { // <1>
+    directives: { // <2>
+      "default-src": ["'self'"],
+      "base-uri": ["'self'"],
+      "block-all-mixed-content": [],
+      "font-src": ["'self'", "https:", "data:"],
+      "form-action": ["'self'"],
+      "frame-ancestors": ["'self'"],
+      "img-src": ["'self'", "data:", aj, fb], // <3>
+      "object-src": ["'none'"],
+      "script-src": ["'self'", aj, fb], // <4>
+      "script-src-attr": ["'none'"],
+      "style-src": ["'self'", "https:", "'unsafe-inline'"],
+      "upgrade-insecure-requests": [],
+      "connect-src": ["'self'", aj, fb], // <5>
+    },
+  },
+}));
+
+
 app.listen(32768);
 
 //モデルの読み込み
@@ -42,6 +65,7 @@ app.use(function(err, req, res, next) {
   //res.status(err.status || 500);
   //res.render('error');
 });
+
 
 
 
